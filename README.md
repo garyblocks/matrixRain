@@ -7,7 +7,7 @@ Generate a matrix rain like the one in movie _matrix_ in your terminal
 ```shell
 python matrix.py
 ```
-<p align="center"><img src="imgs/effect1.png" alt="Default"></p>
+<p align="center"><img src="imgs/effect1.png" alt="Default" width=100px></p>
 
 #### Colorful
 ```shell
