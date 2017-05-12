@@ -24,4 +24,11 @@ python matrix.py no-jp
 <p align="left"><img src="imgs/effect3.png" alt="No-jp" width=600px>
 </p>
 
+#### Rain head
+```shell
+python matrix.py head
+```
+<p align="left"><img src="imgs/effect4.png" alt="head" width=600px>
+</p>
+
 #### Enjoy!

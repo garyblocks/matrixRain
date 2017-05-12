@@ -20,7 +20,7 @@ class matrix(object):
         self.red    = '\033[91m'
         self.dark   = '\033[90m'
         self.bold   = '\033[1m' + self.green
-        self.end    = '\033[0m' + self.green
+        self.end    = '\033[0m'
         self.colors = [self.green, self.yellow, self.red, self.dark, self.bold]
         # variables
         self.matrix = [[' ' for col in range(self.width)] for row in range(self.height)]
@@ -45,7 +45,7 @@ class matrix(object):
         else:
             return unichr(rand.randrange(0x3041, 0x3097))
 
-    def run(self, colorful=False, jp=True):
+    def run(self, colorful=False, jp=True, head=False):
         matrix = self.mat if jp else self.matrix
         width  = self.half if jp else self.width
         self.cnt += 1
@@ -59,7 +59,7 @@ class matrix(object):
                     continue
                 elif j % 2 == 0 and self.cnt % 3 != 0:
                     continue
-                # move one step
+                # move one step, only generate new char if is not same
                 if matrix[i][j].isspace() != matrix[i - 1][j].isspace():
                     if matrix[i - 1][j] == ' ':
                         matrix[i][j] = ' '
@@ -68,10 +68,18 @@ class matrix(object):
                     elif colorful:
                         self.status[i][j] = self.status[i - 1][j]
                         char = self.get_jp() if jp else self.get_char()
-                        matrix[i][j] = self.status[i][j] + char
+                        if head:
+                            matrix[i - 1][j] = matrix[i - 1][j].replace(self.end, '')
+                            matrix[i][j] = self.status[i][j] + self.end + char
+                        else:
+                            matrix[i][j] = self.status[i][j] + char
                     else:
                         char = self.get_jp() if jp else self.get_char()
-                        matrix[i][j] = char
+                        if head:
+                            matrix[i - 1][j] = matrix[i - 1][j].replace(self.end, '')
+                            matrix[i][j] = self.end + char + self.green
+                        else:
+                            matrix[i][j] = char
         # generate rain
         for k in range(width):
             r = rand.random()
@@ -98,7 +106,7 @@ class matrix(object):
         output = []
         for i in matrix:
             line = ''.join(i)
-            if self.width % 2 == 1:
+            if jp and self.width % 2 == 1:
                 line += ' '
             output.append(line)
         print(self.green + ''.join(output))
@@ -106,10 +114,11 @@ class matrix(object):
 if __name__ == '__main__':
     color = True if 'color' in sys.argv else False
     jp    = False if 'no-jp' in sys.argv else True
+    head  = True if 'head' in sys.argv else False
     rain = matrix()
     while True:
         try:
-            rain.run(color, jp)
+            rain.run(color, jp, head)
         except KeyboardInterrupt:
             subprocess.call(["clear"])
             sys.exit()

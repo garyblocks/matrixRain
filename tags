@@ -1,0 +1,17 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+color	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    color = True if 'color' in sys.argv else False$/;"	v	language:Python	class:matrix
+fcntl	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import fcntl$/;"	i	language:Python
+get_char	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    def get_char(self):$/;"	m	language:Python	class:matrix
+get_jp	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    def get_jp(self):$/;"	m	language:Python	class:matrix
+head	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    head  = True if 'head' in sys.argv else False$/;"	v	language:Python	class:matrix
+jp	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    jp    = False if 'no-jp' in sys.argv else True$/;"	v	language:Python	class:matrix
+matrix	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^class matrix(object):$/;"	c	language:Python
+rain	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    rain = matrix()$/;"	v	language:Python	class:matrix
+rand	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import random as rand$/;"	i	language:Python
+run	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    def run(self, colorful=False, jp=True, head=False):$/;"	m	language:Python	class:matrix
+struct	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import struct$/;"	i	language:Python
+subprocess	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import subprocess$/;"	i	language:Python
+sys	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import sys$/;"	i	language:Python
+termios	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import termios$/;"	i	language:Python
+time	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^import time$/;"	i	language:Python
+__init__	/Users/wangjiayu/Desktop/github/matrixRain/matrix.py	/^    def __init__(self):$/;"	m	language:Python	class:matrix
